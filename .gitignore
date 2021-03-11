@@ -1,0 +1,12 @@
+*.npy
+__pycache__/
+scripts_emoreact/
+.ipynb_checkpoints/
+explore-emoreact.ipynb
+*.pyc
+*.png
+*.txt
+*.avi
+*.tar
+third_party/
+logs/

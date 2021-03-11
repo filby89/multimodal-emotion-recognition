@@ -1,0 +1,40 @@
+{
+    "name": "affectnet-full-my-age-train-scores",
+    "n_gpu": 4,
+    "loss": "cross_entropy_loss",
+    "arch": {
+        "type": "AffectNet",
+        "args": {
+        }
+    },
+    "metrics": [
+        "accuracy", "balanced_accuracy"
+    ],
+    "lr_scheduler": {
+        "type": "ReduceLROnPlateau",
+        "args": {
+            "verbose": true,
+            "patience": 5
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 1e-4
+        }
+    },
+    "dataloader": {
+        "batch_size": 1024
+    },
+    "trainer": {
+        "epochs": 40,
+        "save_dir": "logs/affectnet",
+        "save_period": 1,
+        "verbosity": 2,
+        
+        "monitor": "min val_loss",
+        "early_stop": 100,
+
+        "tensorboard": true
+    }
+}
